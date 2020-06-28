@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "jsx": "react",
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "allowSyntheticDefaultImports": true,
+    "noErrorTruncation": true,
+    "paths": {
+      "@store-framework/modal": ["./packages/modal/src"]
+    }
+  },
+  "exclude": ["**/build/", "node_modules"]
+}

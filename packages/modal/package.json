@@ -1,0 +1,43 @@
+{
+  "name": "@store-framework/modal",
+  "version": "0.0.0",
+  "private": false,
+  "author": "VTEX Store Framework Team",
+  "description": "A Modal React component",
+  "keywords": [
+    "react",
+    "react-component",
+    "vtex",
+    "store framework",
+    "modal"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Klynger/store-framework",
+    "directory": "packages/modal"
+  },
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Klynger/modal/issues"
+  },
+  "scripts": {
+    "build": "yarn build:cjs && yarn build:esm && yarn build:es && yarn build:umd && yarn build:copy-files",
+    "prebuild": "rimraf build",
+    "build:cjs": "node ../../scripts/build cjs",
+    "build:esm": "node ../../scripts/build esm",
+    "build:es": "node ../../scripts/build es",
+    "build:umd": "cross-env BABEL_ENV=production-umd rollup -c scripts/rollup.config.js",
+    "build:copy-files": "node ../../scripts/copy-files.js"
+  },
+  "dependencies": {
+    "react-transition-group": "^4.4.1"
+  },
+  "devDependencies": {
+    "@types/react-transition-group": "^4.2.4"
+  },
+  "peerDependencies": {
+    "@types/react": "^16.9.35",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
