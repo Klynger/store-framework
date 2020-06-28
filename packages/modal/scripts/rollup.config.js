@@ -38,11 +38,11 @@ export default [
     external: Object.keys(globals),
     acornInjectPlugins: [jsx()],
     plugins: [
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript({ tsconfig: 'tsconfig.json' }),
       nodeResolve(),
       babel(babelOptions),
       commonjs(commonOptions),
-      replace({ 'proccess.env.NODE_ENV': JSON.stringify('development') })
+      replace({ 'proccess.env.NODE_ENV': JSON.stringify('development') }),
     ],
   },
   {
@@ -57,12 +57,12 @@ export default [
     acornInjectPlugins: [jsx()],
     plugins: [
       nodeResolve(),
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript({ tsconfig: 'tsconfig.json' }),
       babel(babelOptions),
       commonjs(commonOptions),
       replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
       // sizeSnapshot({ snapshotPath: 'size-snapshot.json' }),
-      terser()
-    ]
-  }
+      terser(),
+    ],
+  },
 ]

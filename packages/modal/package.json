@@ -16,17 +16,18 @@
     "url": "https://github.com/Klynger/store-framework",
     "directory": "packages/modal"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Klynger/modal/issues"
   },
   "scripts": {
-    "build": "yarn build:cjs && yarn build:esm && yarn build:es && yarn build:umd && yarn build:copy-files",
+    "build": "yarn build:cjs && yarn build:esm && yarn build:es && yarn build:umd && yarn build:types && yarn build:copy-files",
     "prebuild": "rimraf build",
     "build:cjs": "node ../../scripts/build cjs",
     "build:esm": "node ../../scripts/build esm",
     "build:es": "node ../../scripts/build es",
     "build:umd": "cross-env BABEL_ENV=production-umd rollup -c scripts/rollup.config.js",
+    "build:types": "tsc -p tsconfig.build.json",
     "build:copy-files": "node ../../scripts/copy-files.js"
   },
   "dependencies": {
