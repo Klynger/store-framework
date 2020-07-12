@@ -74,7 +74,7 @@ yargs
     builder: (command) => {
       return command
         .positional('pacakgeName', {
-          description: 'Availables packages to build: a, b, c',
+          description: '',
           types: 'string',
         })
         .option('out-dir', { default: targetPath, type: 'string' })
