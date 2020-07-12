@@ -5,7 +5,7 @@ import { terser } from 'rollup-plugin-terser'
 import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
 import nodeResolve from '@rollup/plugin-node-resolve'
-// import { sizeSnapshot } from 'rollup-plugin-size-snapshot'
+import { sizeSnapshot } from 'rollup-plugin-size-snapshot'
 
 const packageName = '{{ packageName }}'
 const packageFileName = '{{ packageFileName }}'
@@ -64,7 +64,7 @@ export default [
       babel(babelOptions),
       commonjs(commonOptions),
       replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
-      // sizeSnapshot({ snapshotPath: 'size-snapshot.json' }),
+      sizeSnapshot({ snapshotPath: 'size-snapshot.json' }),
       terser(),
     ],
   },
