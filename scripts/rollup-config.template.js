@@ -7,6 +7,9 @@ import typescript from '@rollup/plugin-typescript'
 import nodeResolve from '@rollup/plugin-node-resolve'
 // import { sizeSnapshot } from 'rollup-plugin-size-snapshot'
 
+const packageName = '{{ packageName }}'
+const packageFileName = '{{ packageFileName }}'
+
 const input = './src/index.ts'
 const globals = {
   react: 'React',
@@ -30,9 +33,9 @@ export default [
   {
     input,
     output: {
-      file: 'build/umd/modal.development.js',
+      file: `build/umd/${packageFileName}.development.js`,
       format: 'umd',
-      name: 'StoreFrameworkModal',
+      name: packageName,
       globals,
     },
     external: Object.keys(globals),
@@ -48,9 +51,9 @@ export default [
   {
     input,
     output: {
-      file: 'build/umd/modal.production.min.js',
+      file: `build/umd/${packageFileName}.production.min.js`,
       format: 'umd',
-      name: 'StoreFrameworkModal',
+      name: packageName,
       globals,
     },
     external: Object.keys(globals),

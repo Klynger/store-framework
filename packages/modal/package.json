@@ -26,7 +26,8 @@
     "build:cjs": "node ../../scripts/build cjs",
     "build:esm": "node ../../scripts/build esm",
     "build:es": "node ../../scripts/build es",
-    "build:umd": "cross-env BABEL_ENV=production-umd rollup -c scripts/rollup.config.js",
+    "build:rollup-config": "node ../../scripts/rollup-config-generator StoreFrameworkTransitions",
+    "build:umd": "yarn build:rollup-config && cross-env BABEL_ENV=production-umd rollup -c build/rollup.config.js && rimraf build/rollup.config.js",
     "build:types": "tsc -p tsconfig.build.json",
     "build:copy-files": "node ../../scripts/copy-files.js"
   },
